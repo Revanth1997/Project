@@ -6,13 +6,20 @@
 }
 
 .popular-heading {
-  font-family: DM Sans;
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: bold;
   font-size: 32px;
   line-height: 48px;
   color: #183b56;
   margin-bottom: 0px;
+}
+
+@media screen and (max-width: 992px) {
+  .popular-heading {
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 
 .select-container {
@@ -28,7 +35,7 @@
 }
 
 .select-text {
-  font-family: DM Sans;
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -36,6 +43,11 @@
   color: #64748b;
 }
 
+@media screen and (max-width: 768px) {
+  .select-text {
+    font-size: 10px;
+  }
+}
 .sort-container {
   display: flex;
   justify-content: flex-start;
@@ -49,7 +61,7 @@
 }
 
 .sort-text {
-  font-family: DM Sans;
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -57,10 +69,22 @@
   color: #475569;
 }
 
+@media screen and (max-width: 992px) {
+  .sort-text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sort-text {
+    font-size: 10px;
+  }
+}
+
 .select-options {
   outline: none;
   border: none;
-  font-family: DM Sans;
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -69,11 +93,22 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+  .select-options {
+    font-size: 10px;
+  }
+}
 .option {
-  font-family: DM Sans;
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: #475569;
+}
+
+@media screen and (max-width: 768px) {
+  .option {
+    font-size: 10px;
+  }
 }

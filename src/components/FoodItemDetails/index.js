@@ -47,7 +47,7 @@ class FoodItemDetails extends Component {
           }
 
           return (
-            <li testid="foodItem" className="foodItem">
+            <li testid="foodItem" className="food-item">
               <img
                 src={imageUrl}
                 alt="restaurant"

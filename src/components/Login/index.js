@@ -1,8 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
-import myLogo from '../Backgroundpics/Vector.jpg'
-import bgImg from '../Backgroundpics/Rectangle 1456 (1).png'
 
 import './index.css'
 
@@ -34,7 +32,7 @@ class LoginForm extends Component {
     this.setState({showSubmitError: true, errorMsg})
   }
 
-  onSubmitForm = async event => {
+  submitForm = async event => {
     event.preventDefault()
     const {username, password} = this.state
     const userDetails = {username, password}
@@ -62,8 +60,7 @@ class LoginForm extends Component {
         <input
           type="password"
           id="password"
-          className="password-input-filed"
-          placeholder="Password"
+          className="password-input-field"
           value={password}
           onChange={this.onChangePassword}
         />
@@ -81,8 +78,7 @@ class LoginForm extends Component {
         <input
           type="text"
           id="username"
-          className="username-input-filed"
-          placeholder="Username"
+          className="username-input-field"
           value={username}
           onChange={this.onChangeUsername}
         />
@@ -92,35 +88,39 @@ class LoginForm extends Component {
 
   render() {
     const {showSubmitError, errorMsg} = this.state
-
-    if (Cookies.get('jwt_token') !== undefined) {
+    const jwtToken = Cookies.get('jwt_token')
+    if (jwtToken !== undefined) {
       return <Redirect to="/" />
     }
-
     return (
-      <div className="bg-container">
+      <div className="login-form-container">
+        <img
+          src="https://res.cloudinary.com/dkobk5oao/image/upload/v1633587041/Rectangle_1457_xkvsxy.png"
+          className="login-website-logo-mobile-image"
+          alt="website logo"
+        />
         <div className="login-container">
-          <form className="form-container" onSubmit={this.onSubmitForm}>
-            <div className="logo-area">
-              <img src={myLogo} alt="website logo" />
-              <h1 className="logo-name">Tasty Kitchens</h1>
-            </div>
-            <h1 className="login-main-heading">Login</h1>
+          <form className="form-container" onSubmit={this.submitForm}>
+            <img
+              src="https://res.cloudinary.com/dkobk5oao/image/upload/v1633608363/Frame_274_mqin4h.png"
+              className="login-website-logo-desktop-image"
+              alt="website logo"
+            />
+            <h1 className="logo-heading">Tasty Kitchens</h1>
+            <h1 className="login-heading">Login</h1>
             <div className="input-container">{this.renderUsernameField()}</div>
             <div className="input-container">{this.renderPasswordField()}</div>
-            {showSubmitError && <p>{errorMsg}</p>}
-            <button className="login-button" type="submit">
+            <button type="submit" className="login-button">
               Login
             </button>
+            {showSubmitError && <p className="error-message">*{errorMsg}</p>}
           </form>
         </div>
-        <div className="bg-img-container">
-          <img
-            className="background-container"
-            src={bgImg}
-            alt="website login"
-          />
-        </div>
+        <img
+          src="https://res.cloudinary.com/dkobk5oao/image/upload/v1633529531/Rectangle_1456_t19ink.png"
+          className="login-image"
+          alt="website login"
+        />
       </div>
     )
   }

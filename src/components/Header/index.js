@@ -1,5 +1,10 @@
+import {FiLogOut} from 'react-icons/fi'
+import {AiOutlineHome} from 'react-icons/ai'
+import {BiCart} from 'react-icons/bi'
+
 import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
+
 import CartContext from '../../Context/CartContext'
 
 import './index.css'
@@ -11,14 +16,6 @@ const Header = props => {
     history.replace('/login')
   }
 
-  const textColor = current => {
-    const {history} = props
-    if (history.location.pathname === current) {
-      return '#f7931e'
-    }
-    return '#334155'
-  }
-
   const renderCartItemsCount = () => (
     <CartContext.Consumer>
       {value => {
@@ -27,9 +24,9 @@ const Header = props => {
 
         return (
           <>
-            {cartItemsCount > 0 && (
-              <span className="cart-count">{cartList.length}</span>
-            )}
+            {cartItemsCount > 0 ? (
+              <span className="cart-count-badge">{cartList.length}</span>
+            ) : null}
           </>
         )
       }}
@@ -37,39 +34,77 @@ const Header = props => {
   )
 
   return (
-    <div className="navbar">
-      <div className="logo-container">
-        <Link to="/" className="nav-link">
-          <img
-            src="https://res.cloudinary.com/dleaoaoxz/image/upload/v1640612186/Group_7420_w55rvv.svg"
-            alt="website logo"
-            className="website-logo"
-          />
-        </Link>
-        <h1 className="website-name">Tasty Kitchens</h1>
-      </div>
-      <ul className="nav-items-container">
-        <Link to="/" className="nav-link">
-          <li className="text" style={{color: textColor('/')}}>
-            Home
-          </li>
-        </Link>
-        <Link to="/cart" className="nav-link">
-          <li className="text" style={{color: textColor('/cart')}}>
-            Cart {renderCartItemsCount()}
-          </li>
-        </Link>
-        <li>
+    <nav className="nav-header">
+      <div className="nav-content">
+        <div className="nav-bar-mobile-logo-container">
+          <div className="icon-container">
+            <Link to="/">
+              <img
+                className="website-logo"
+                src="https://res.cloudinary.com/dkobk5oao/image/upload/v1633608363/Frame_274_mqin4h.png"
+                alt="website logo"
+              />
+            </Link>
+            <h1 className="icon-heading">Tasty Kitchen</h1>
+          </div>
+
           <button
             type="button"
-            className="logout-button"
+            className="nav-mobile-btn"
             onClick={onClickLogout}
           >
-            Logout
+            <FiLogOut size={25} className="nav-bar-img" />
           </button>
-        </li>
-      </ul>
-    </div>
+        </div>
+
+        <div className="nav-bar-large-container">
+          <Link to="/">
+            <img
+              className="website-logo"
+              src="https://res.cloudinary.com/dkobk5oao/image/upload/v1633608363/Frame_274_mqin4h.png"
+              alt="website logo"
+            />
+          </Link>
+          <h1 className="icon-heading">Tasty Kitchen</h1>
+          <ul className="nav-menu">
+            <li className="nav-menu-item">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
+            <li className="nav-menu-item">
+              <Link to="/cart" className="nav-link">
+                Cart
+                {renderCartItemsCount()}
+              </Link>
+            </li>
+            <button
+              type="button"
+              className="logout-desktop-btn"
+              onClick={onClickLogout}
+            >
+              Logout
+            </button>
+          </ul>
+        </div>
+      </div>
+      <div className="nav-menu-mobile">
+        <ul className="nav-menu-list-mobile">
+          <li className="nav-menu-item-mobile">
+            <Link to="/" className="nav-link">
+              <AiOutlineHome size={25} className="nav-bar-img" />
+            </Link>
+          </li>
+          <li className="nav-menu-item-mobile">
+            <Link to="/cart" className="nav-link">
+              <BiCart size={25} className="nav-bar-img" />
+
+              {renderCartItemsCount()}
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
   )
 }
 

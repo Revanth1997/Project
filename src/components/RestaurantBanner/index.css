@@ -1,7 +1,7 @@
 .banner-bg {
   width: 100%;
-  height: 350px;
-  background: #333333;
+  height: 344px;
+  background-image: url('../Backgroundpics/Rectangle\ 1399restaurent.jpg');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,22 +10,39 @@
 
 .banner-container {
   width: 90%;
-  max-width: 1200px;
   display: flex;
   align-items: center;
 }
 
-.res-image {
-  width: 150px;
-  height: 280px;
-  margin-right: 20px;
+@media screen and (max-width: 992px) {
+  .banner-container {
+    height: 188px;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .banner-bg {
+    margin-top: 0px;
+    min-width: 360px;
+  }
 }
 
-@media screen and (min-width: 768px) {
+.res-image {
+  width: 445px;
+  height: 280px;
+  border-radius: 8px;
+  margin-right: 20px;
+  margin-left: 165px;
+}
+
+@media screen and (max-width: 992px) {
   .res-image {
-    width: 445px;
-    height: 280px;
-    border-radius: 8px;
+    width: 221px;
+    height: 221px;
+    border-radius: 134px;
+    margin-left: -68px;
+    margin-top: -54px;
   }
 }
 
@@ -35,49 +52,51 @@
   justify-content: center;
 }
 .res-name {
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 36px;
   line-height: 48px;
   letter-spacing: 0.2px;
   color: #ffffff;
   margin-bottom: 0px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 992px) {
   .res-name {
-    font-size: 30px;
+    font-size: 16px;
   }
 }
 
 .res-cuisine {
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 24px;
   color: #ffffff;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 992px) {
   .res-cuisine {
-    font-size: 16px;
+    font-size: 12px;
+    line-height: 16px;
   }
 }
 
 .res-location {
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 24px;
   color: #ffffff;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 992px) {
   .res-location {
-    font-size: 16px;
+    font-size: 12px;
+    line-height: 16px;
   }
 }
 
@@ -94,7 +113,7 @@
 }
 
 .rating {
-  font-family: DM Sans;
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -106,7 +125,7 @@
 }
 
 .sub-text {
-  font-family: DM Sans;
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: normal;
   font-size: 12px;

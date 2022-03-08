@@ -1,4 +1,4 @@
-.restaurent-back-image {
+.restaurant-back-image {
   background-image: url('../Backgroundpics/Rectangle\ 1399restaurent.jpg');
   background-size: 30vh;
   display: flex;
@@ -30,10 +30,10 @@
   display: flex;
   margin: 10px;
 }
-.food-list-container-element {
-  width: 100%;
+.food-items-list {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
   flex-wrap: wrap;
+}
+.restaurant-loader {
+  text-align: center;
 }

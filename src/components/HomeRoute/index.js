@@ -5,11 +5,14 @@ import Footer from '../Footer'
 import './index.css'
 
 const HomeRoute = () => (
-  <div className="home-container">
+  <>
     <Header />
-    <ReactSlider />
-    <Restaurants />
+    <div className="home-container">
+      <ReactSlider />
+      <Restaurants />
+    </div>
+
     <Footer />
-  </div>
+  </>
 )
 export default HomeRoute

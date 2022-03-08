@@ -23,7 +23,9 @@ const CartItem = props => (
         <li className="cart-item" testid="cartItem">
           <div className="cart-item-info" testid="cartItem">
             <img src={imageUrl} alt={name} className="cart-item-image" />
-            <h1 className="cart-item-desktop-name">{name}</h1>
+            <h1 className="cart-item-desktop-name" testid="cartItem">
+              {name}
+            </h1>
           </div>
           <div className="cart-qty-price-cont" testid="cartItem">
             <h1 className="cart-item-mobile-name">{name}</h1>
